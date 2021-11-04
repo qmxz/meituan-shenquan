@@ -204,10 +204,10 @@ def drawlottery(batchId):
             print("领取成功!\n提示信息:%s\n红包属性:%s\n使用限制:%s\n红包价值:%s\n红包立即生效时间:%s\n红包剩余有效期:%s分钟\n"%(result2["msg"],result2["data"]["name"],result2["data"]["priceLimitdesc"],result2["data"]["showTitle"],result2["data"]["endTimeDesc"],str(float(result2["data"]["leftTime"])/60000)))
             global showPriceNumber
             showPriceNumber = result2["data"]["showPriceNumber"]
-            if int(showPriceNumber)<500:
-                print("**当前红包面值为%d元，小于5元，👴将自动执行小额红包转红包豆脚本!!**\n"%(int(showPriceNumber)/100))
+            if int(showPriceNumber)<501:
+                print("**当前红包面值为%d元，小于5.01元，👴将自动执行小额红包转红包豆脚本!!**\n"%(int(showPriceNumber)/100))
             else:
-                print("**当前红包面值为%d元，大于等于5元，👴将不会执行小额红包转红包豆脚本!!**\n"%(int(showPriceNumber)/100))
+                print("**当前红包面值为%d元，大于等于5.01元，👴将不会执行小额红包转红包豆脚本!!**\n"%(int(showPriceNumber)/100))
         elif (result2["code"]==1 and result2["subcode"]==3):
             print("%s😅\n"%(result2["msg"]))
         elif(result2["code"]==1 and result2["subcode"]==-1):
